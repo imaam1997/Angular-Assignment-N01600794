@@ -41,3 +41,6 @@ A simple Angular application that displays Pokémon data from the PokeAPI, inclu
     ```
     http://localhost:4200/
     ```
+
+## Deployment Link
+https://my-angular-app-gamma.vercel.app/    
