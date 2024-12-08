@@ -1,0 +1,60 @@
+<div class="form-container">
+  <h2>Trainer Registration</h2>
+  <p class="form-intro">Join the world of Pokémon! Register as a trainer to begin your journey.</p>
+  
+  @if (showSuccess) {
+    <div class="success-message">
+      <h3>Welcome, Pokémon Trainer!</h3>
+      <p>Your registration was successful. Your journey awaits!</p>
+    </div>
+  }
+  
+  <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Trainer Name:</label>
+      <input id="name" type="text" formControlName="name" placeholder="Enter your trainer name">
+      @if (submitted && feedbackForm.get('name')?.errors) {
+        <div class="error">
+          @if (feedbackForm.get('name')?.errors?.['required']) {
+            <span>A trainer name is required!</span>
+          }
+          @if (feedbackForm.get('name')?.errors?.['minlength']) {
+            <span>Trainer name must be at least 2 characters</span>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Pokémon Trainer Club Email:</label>
+      <input id="email" type="email" formControlName="email" placeholder="trainer@pokemon.com">
+      @if (submitted && feedbackForm.get('email')?.errors) {
+        <div class="error">
+          @if (feedbackForm.get('email')?.errors?.['required']) {
+            <span>Email is required for your trainer account</span>
+          }
+          @if (feedbackForm.get('email')?.errors?.['email']) {
+            <span>Please enter a valid email address</span>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="message">Why do you want to become a Pokémon trainer?</label>
+      <textarea id="message" formControlName="message" placeholder="Tell us about your dream to become a Pokémon Master..."></textarea>
+      @if (submitted && feedbackForm.get('message')?.errors) {
+        <div class="error">
+          @if (feedbackForm.get('message')?.errors?.['required']) {
+            <span>Please share your motivation!</span>
+          }
+          @if (feedbackForm.get('message')?.errors?.['minlength']) {
+            <span>Your story must be at least 10 characters long</span>
+          }
+        </div>
+      }
+    </div>
+
+    <button type="submit">Start Your Journey!</button>
+  </form>
+</div>

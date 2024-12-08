@@ -1,0 +1,10 @@
+<nav>
+  <h1 class="nav-title">Pokémon Center</h1>
+  <ul>
+    <li><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Pokémon Home</a></li>
+    <li><a [routerLink]="['/api-data']" routerLinkActive="active">Pokédex</a></li>
+    <li><a [routerLink]="['/form']" routerLinkActive="active">Trainer Registration</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

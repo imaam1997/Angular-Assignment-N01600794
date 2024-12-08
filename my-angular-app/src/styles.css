@@ -1,0 +1,339 @@
+/* Base colors and variables */
+:root {
+  --primary-color: #f0c808;
+  --primary-hover: #ffdb4d;
+  --dark-bg: #1a1a1a;
+  --card-bg: #2d2d2d;
+  --text-light: #e0e0e0;
+  --text-dark: #2d2d2d;
+  --border-radius: 12px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+/* Add specific transitions where needed */
+nav a,
+.feature-card,
+.pokemon-card,
+.form-group input,
+.form-group textarea,
+button,
+.feature-link {
+  transition: all 0.3s ease;
+}
+
+nav {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 2px solid var(--primary-color);
+}
+
+.nav-title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background: #3d3d3d;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  background: var(--primary-color);
+  color: var(--text-dark);
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary-color);
+}
+
+.form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--dark-bg);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-hover);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background: var(--primary-hover);
+}
+
+button[type="submit"]:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  margin: 1rem 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-message h3 {
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.post {
+  background: #2d2d2d;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post h3 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: #004494;
+}
+
+button:disabled {
+  background: #333;
+  cursor: not-allowed;
+}
+
+.pokemon-card {
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+}
+
+.pokemon-card img {
+  width: 150px;
+  height: 150px;
+  margin: 1rem 0;
+}
+
+.pokemon-info {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-container h1 {
+  color: #f0c808;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.intro-section {
+  margin-top: 2rem;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary-color);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  margin-bottom: 1.5rem;
+}
+
+.feature-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.feature-link:hover {
+  background: var(--primary-hover);
+  transform: translateX(5px);
+  box-shadow: var(--shadow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .feature-cards, .posts {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .form-container h2 {
+    font-size: 2rem;
+  }
+  
+  button[type="submit"] {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+h1, h2, h3, .nav-title {
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

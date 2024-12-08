@@ -1,0 +1,33 @@
+<div class="api-data-container">
+  <h2>Pokédex</h2>
+  
+  @if (loading) {
+    <div class="loading">
+      <h3>Loading Pokémon Data...</h3>
+      <p>Please wait while we fetch your Pokédex entries</p>
+    </div>
+  } @else if (error) {
+    <div class="error">
+      <h3>Oops! Something went wrong</h3>
+      <p>{{ error }}</p>
+    </div>
+  } @else {
+    <div class="posts">
+      @for (pokemon of pokemons; track pokemon.id) {
+        <div class="post pokemon-card">
+          <h3>{{ pokemon.name | titlecase }}</h3>
+          <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+          <div class="pokemon-info">
+            <p><strong>Height:</strong> {{ pokemon.height / 10 }}m</p>
+            <p><strong>Weight:</strong> {{ pokemon.weight / 10 }}kg</p>
+            <p><strong>Types:</strong> 
+              @for (type of pokemon.types; track type.slot; let last = $last) {
+                {{ type.type.name | titlecase }}{{!last ? ', ' : ''}}
+              }
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
